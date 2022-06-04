@@ -1,0 +1,17 @@
+version: "2.0"
+
+rules:
+
+- rule: init phone form
+  steps:
+    - intent: call_phone
+    - action: phone_form
+    - active_loop: phone_form
+
+- rule: submit phone form
+  condition:
+    - active_loop: phone_form
+  steps:
+    - action: phone_form
+    - active_loop: null
+    - action: utter_call_phone
