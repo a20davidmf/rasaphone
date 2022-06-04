@@ -1,4 +1,4 @@
-FROM python:3.8.10
+FROM python:3.8.10 as BASE
 
 RUN apt-get update \
     && apt-get --assume-yes --no-install-recommends install \
